@@ -1,10 +1,5 @@
 using UnityEngine;
 
-<<<<<<< Updated upstream
-public class NewEmptyCSharpScript
-{
-    
-=======
 public class MenuUIManager : MonoBehaviour
 {
     [SerializeField] private GameObject eventPanelUserInRange;
@@ -13,13 +8,13 @@ public class MenuUIManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void DisplayStartEventPanel()
@@ -35,6 +30,7 @@ public class MenuUIManager : MonoBehaviour
         if (isUIPanelActive == false)
         {
             eventPanelUserNotInRange.SetActive(true);
+            isUIPanelActive = true;
         }
     }
 
@@ -44,5 +40,4 @@ public class MenuUIManager : MonoBehaviour
         eventPanelUserNotInRange.SetActive(false);
         isUIPanelActive = false;
     }
->>>>>>> Stashed changes
 }
