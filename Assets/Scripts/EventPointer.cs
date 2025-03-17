@@ -12,19 +12,26 @@ public class EventPointer : MonoBehaviour
 
     LocationStatus playerLocation;
     public Vector2d eventPose;
+<<<<<<< Updated upstream
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         
+=======
+    public int eventID;
+    MenuUIManager MenuUIManager;
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        MenuUIManager = GameObject.Find("Canvas").GetComponent<MenuUIManager>();
+>>>>>>> Stashed changes
     }
-
 
     // Update is called once per frame
     void Update()
     {
         FloatAndRotatePointer();
     }
-
 
     void FloatAndRotatePointer()
     {
@@ -37,7 +44,19 @@ public class EventPointer : MonoBehaviour
         var currentPlayerLocation = new GeoCoordinatePortable.GeoCoordinate(playerLocation.GetLocationLat(), playerLocation.GetLocationLon());
         var eventLocation = new GeoCoordinatePortable.GeoCoordinate(eventPose[0], eventPose[1]);
         var distance = currentPlayerLocation.GetDistanceTo(eventLocation);
+<<<<<<< Updated upstream
             Debug.Log("Distance is " + distance);
        
+=======
+        Debug.Log("Distance is " + distance);
+        if(distance < 70)
+        {
+            MenuUIManager.DisplayStartEventPanel();
+        }else
+        {
+            MenuUIManager.DisplayUserNotInRangePanel();
+        }
+
+>>>>>>> Stashed changes
     }
 }

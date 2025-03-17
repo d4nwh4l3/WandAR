@@ -20,8 +20,27 @@ namespace Mapbox.Examples
         Vector2d[] _locations;
 
 
+<<<<<<< Updated upstream
         [SerializeField]
         float _spawnScale = 100f;
+=======
+		void Start()
+		{
+			_locations = new Vector2d[_locationStrings.Length];
+			_spawnedObjects = new List<GameObject>();
+			for (int i = 0; i < _locationStrings.Length; i++)
+			{
+				var locationString = _locationStrings[i];
+				_locations[i] = Conversions.StringToLatLon(locationString);
+				var instance = Instantiate(_markerPrefab);
+				instance.GetComponent<EventPointer>().eventPose = _locations[i];
+				instance.GetComponent<EventPointer>().eventID = i + 1;
+				instance.transform.localPosition = _map.GeoToWorldPosition(_locations[i], true);
+				instance.transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);
+				_spawnedObjects.Add(instance);
+			}
+		}
+>>>>>>> Stashed changes
 
 
         [SerializeField]
