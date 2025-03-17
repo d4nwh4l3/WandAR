@@ -10,13 +10,12 @@ public class EventPointer : MonoBehaviour
     [SerializeField] private float amplitude = 2.0f;
     [SerializeField] private float frequency = 0.50f;
 
-
     LocationStatus playerLocation;
-    public Vector2d eventPos;
+    public Vector2d eventPose;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-       
+        
     }
 
 
@@ -35,10 +34,10 @@ public class EventPointer : MonoBehaviour
     private void OnMouseDown()
     {
         playerLocation = GameObject.Find("Canvas").GetComponent<LocationStatus>();
-        var currentPlayerLocation = new GeoCoordinatePortable.GeoCoordinate(playerLocation.GetLocationLat(),playerLocation.GetLocationLon());
-        var eventLocation = new Geor GeoCoordinatePortable.GeoCoordinate(eventPos[0], eventPos[1]);
-        var distance currentPlayerLocation.GetDistanceTo(eventLocation);
-            Debug.Log("Distance is " = distance);
+        var currentPlayerLocation = new GeoCoordinatePortable.GeoCoordinate(playerLocation.GetLocationLat(), playerLocation.GetLocationLon());
+        var eventLocation = new GeoCoordinatePortable.GeoCoordinate(eventPose[0], eventPose[1]);
+        var distance = currentPlayerLocation.GetDistanceTo(eventLocation);
+            Debug.Log("Distance is " + distance);
        
     }
 }

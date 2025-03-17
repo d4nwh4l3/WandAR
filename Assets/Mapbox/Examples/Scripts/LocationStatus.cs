@@ -10,14 +10,11 @@ namespace Mapbox.Examples
 
     public class LocationStatus : MonoBehaviour
     {
-
-
         [SerializeField]
         Text _statusText;
 
-
         private AbstractLocationProvider _locationProvider = null;
-        Location currLoc
+        Location currLoc;
         void Start()
         {
             if (null == _locationProvider)
@@ -26,13 +23,9 @@ namespace Mapbox.Examples
             }
         }
 
-
-
-
         void Update()
         {
             currLoc = _locationProvider.CurrentLocation;
-
 
             if (currLoc.IsLocationServiceInitializing)
             {
@@ -57,15 +50,16 @@ namespace Mapbox.Examples
                 }
             }
 
-
         }
-        public double GetLocationLat(){
+
+        public double GetLocationLat()
+        {
+            return currLoc.LatitudeLongitude.x;
         }
-        return currLoc.LatitudeLongitude.x;
+        public double GetLocationLon()
+        {
+            return currLoc.LatitudeLongitude.y;
+        }
     }
-    public double GetLocationLon(){
 
-
-    }
-    return currLoc.LatitudeLongitude.y;
 }
