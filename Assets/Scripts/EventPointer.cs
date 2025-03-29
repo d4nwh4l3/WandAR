@@ -12,11 +12,12 @@ public class EventPointer : MonoBehaviour
 
 
     LocationStatus playerLocation;
-    public Vector2d eventPos;
+    public Vector2d eventPose;
+    MenuUIManager MenuUIManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-       
+       MenuUIManager = GameObject.Find("Canvas").GetComponent<MenuUIManager>();
     }
 
 
@@ -36,9 +37,14 @@ public class EventPointer : MonoBehaviour
     {
         playerLocation = GameObject.Find("Canvas").GetComponent<LocationStatus>();
         var currentPlayerLocation = new GeoCoordinatePortable.GeoCoordinate(playerLocation.GetLocationLat(),playerLocation.GetLocationLon());
-        var eventLocation = new Geor GeoCoordinatePortable.GeoCoordinate(eventPos[0], eventPos[1]);
-        var distance currentPlayerLocation.GetDistanceTo(eventLocation);
-            Debug.Log("Distance is " = distance);
-       
+        var eventLocation = new GeoCoordinatePortable.GeoCoordinate(eventPose[0], eventPose[1]);
+        var distance = currentPlayerLocation.GetDistanceTo(eventLocation);
+            Debug.Log("Distance is " + distance);
+       if (distance < 70)
+       {
+        MenuUIManager.DisplayStartEventPanel();
+       } else
+       MenuUIManager.DisplayUserNotInRangePanel();
+
     }
 }

@@ -17,7 +17,7 @@ namespace Mapbox.Examples
 
 
         private AbstractLocationProvider _locationProvider = null;
-        Location currLoc
+        Location currLoc;
         void Start()
         {
             if (null == _locationProvider)
@@ -59,13 +59,14 @@ namespace Mapbox.Examples
 
 
         }
-        public double GetLocationLat(){
+         public double GetLocationLat()
+        {
+            return currLoc.LatitudeLongitude.x;
         }
-        return currLoc.LatitudeLongitude.x;
-    }
-    public double GetLocationLon(){
 
-
+        public double GetLocationLon()
+        {
+            return currLoc.LatitudeLongitude.y;
+        }
     }
-    return currLoc.LatitudeLongitude.y;
 }
