@@ -7,59 +7,63 @@ namespace Mapbox.Examples
     using UnityEngine;
     using UnityEngine.UI;
 
-
     public class LocationStatus : MonoBehaviour
     {
-
-
         [SerializeField]
-        Text _statusText;
-
+        private Text _statusText;
 
         private AbstractLocationProvider _locationProvider = null;
-        Location currLoc;
+        private Location currLoc;
+
         void Start()
         {
-            if (null == _locationProvider)
+            if (LocationProviderFactory.Instance != null)
             {
                 _locationProvider = LocationProviderFactory.Instance.DefaultLocationProvider as AbstractLocationProvider;
             }
+
+            if (_locationProvider == null)
+            {
+                Debug.LogError("LocationProvider is null! Make sure LocationProviderFactory is properly initialized.");
+            }
         }
-
-
-
 
         void Update()
         {
+            if (_locationProvider == null)
+            {
+                Debug.LogError("LocationProvider is still null in Update. Skipping location update.");
+                return;
+            }
+
             currLoc = _locationProvider.CurrentLocation;
 
+            if (_statusText == null)
+            {
+                Debug.LogError("StatusText UI element is not assigned!");
+                return;
+            }
 
+           
             if (currLoc.IsLocationServiceInitializing)
             {
-                _statusText.text = "location services are initializing";
+                _statusText.text = "Location services are initializing...";
+            }
+            else if (!currLoc.IsLocationServiceEnabled)
+            {
+                _statusText.text = "Location services not enabled.";
+            }
+            else if (currLoc.LatitudeLongitude.Equals(Vector2d.zero))
+            {
+                _statusText.text = "Waiting for location...";
             }
             else
             {
-                if (!currLoc.IsLocationServiceEnabled)
-                {
-                    _statusText.text = "location services not enabled";
-                }
-                else
-                {
-                    if (currLoc.LatitudeLongitude.Equals(Vector2d.zero))
-                    {
-                        _statusText.text = "Waiting for location ....";
-                    }
-                    else
-                    {
-                        _statusText.text = string.Format("{0}", currLoc.LatitudeLongitude);
-                    }
-                }
+                _statusText.text = string.Format("Location: {0}", currLoc.LatitudeLongitude);
             }
-
-
         }
-         public double GetLocationLat()
+
+        public double GetLocationLat()
         {
             return currLoc.LatitudeLongitude.x;
         }

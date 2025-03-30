@@ -4,7 +4,34 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Mapbox/Examples/0_PrefabScenes/Location-basedGame.unity
+    guid: 42f6aa7ce7a604f16ade319663f46ceb
+  - enabled: 1
+    path: Assets/Scenes/Hillman Library.unity
+    guid: 021e6ff49bf5fb045b4534c256cd99cb
+  - enabled: 1
+    path: Assets/Scenes/Heinz Chapel.unity
+    guid: b8a8e9ade48fad641a02e47374af1a79
+  - enabled: 1
+    path: Assets/Scenes/Information Sciences.unity
+    guid: a760108f18e48774aa7abcc40a6aec8c
+  - enabled: 1
+    path: Assets/Scenes/Frick Fine Arts.unity
+    guid: c0f40f97f2eb18c40a9426c481c56942
+  - enabled: 1
+    path: Assets/Scenes/Benedum Hall.unity
+    guid: db684435aa78bd8439bdaec26ae830f9
+  - enabled: 1
+    path: Assets/Scenes/Peterson Events Center.unity
+    guid: 18d069718d0c2534aa314c5ddfeb588d
+  - enabled: 1
+    path: Assets/Scenes/William Pitt Union.unity
+    guid: e45b56b880b6cb948a057053b71530f7
+  - enabled: 1
+    path: Assets/Scenes/Cathedral of Learning.unity
+    guid: 9bade2bd74dcbdb4aa5a857171273c31
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 289c1b55c9541489481df5cc06664110, type: 3}
   m_UseUCBPForAssetBundles: 0
