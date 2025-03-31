@@ -14,11 +14,12 @@ public class EventPointer : MonoBehaviour
     public Vector2d eventPose;
     public int eventID;
     MenuUIManager MenuUIManager;
-
+    EventManager eventManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         MenuUIManager = GameObject.Find("Canvas").GetComponent<MenuUIManager>();
+        eventManager = GameObject.Find("-EventManager").GetComponent<EventManager>();
     }
 
     // Update is called once per frame
@@ -41,9 +42,9 @@ public class EventPointer : MonoBehaviour
         var distance = currentPlayerLocation.GetDistanceTo(eventLocation);
 
         Debug.Log("Distance is " + distance);
-        if (distance < 70)
+        if (distance < eventManager.maxDistance)
         {
-            MenuUIManager.DisplayStartEventPanel();
+            MenuUIManager.DisplayStartEventPanel(eventID);
         }
         else
         {
