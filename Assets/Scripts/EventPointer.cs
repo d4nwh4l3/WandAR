@@ -14,15 +14,27 @@ public class EventPointer : MonoBehaviour
     LocationStatus playerLocation;
     public Vector2d eventPose;
     public int eventID;
+<<<<<<< HEAD
     private MenuUIManager MenuUIManager; 
     private EventManager eventManager;   
 
+=======
+    MenuUIManager MenuUIManager;
+    EventManager eventManager;
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+>>>>>>> upstream/master
     void Start()
     {
         MenuUIManager = GameObject.Find("Canvas").GetComponent<MenuUIManager>();
         eventManager = GameObject.Find("-EventManager").GetComponent<EventManager>();
+        MenuUIManager = GameObject.Find("Canvas").GetComponent<MenuUIManager>();
+        eventManager = GameObject.Find("-EventManager").GetComponent<EventManager>();
     }
 
+<<<<<<< HEAD
+=======
+    // Update is called once per frame
+>>>>>>> upstream/master
     void Update()
     {
         FloatAndRotatePointer();
@@ -31,6 +43,7 @@ public class EventPointer : MonoBehaviour
     void FloatAndRotatePointer()
     {
         transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
+        transform.position = new Vector3(transform.position.x, (Mathf.Sin(Time.fixedTime * Mathf.PI * frequency) * amplitude) + 15, transform.position.z);
         transform.position = new Vector3(transform.position.x, (Mathf.Sin(Time.fixedTime * Mathf.PI * frequency) * amplitude) + 15, transform.position.z);
     }
 
@@ -42,7 +55,10 @@ public class EventPointer : MonoBehaviour
         var distance = currentPlayerLocation.GetDistanceTo(eventLocation);
 
         Debug.Log("Distance is " + distance);
+<<<<<<< HEAD
 
+=======
+>>>>>>> upstream/master
         if (distance < eventManager.maxDistance)
         {
             MenuUIManager.DisplayStartEventPanel(eventID);
@@ -51,5 +67,9 @@ public class EventPointer : MonoBehaviour
         {
             MenuUIManager.DisplayUserNotInRangePanel();
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> upstream/master
     }
 }

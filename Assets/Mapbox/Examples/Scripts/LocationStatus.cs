@@ -1,4 +1,4 @@
-namespace Mapbox.Examples
+﻿namespace Mapbox.Examples
 {
     using Mapbox.Unity.Location;
     using Mapbox.Utils;
@@ -13,8 +13,7 @@ namespace Mapbox.Examples
         private Text _statusText;
 
         private AbstractLocationProvider _locationProvider = null;
-        private Location currLoc;
-
+        Location currLoc;
         void Start()
         {
             if (LocationProviderFactory.Instance != null)
@@ -62,7 +61,6 @@ namespace Mapbox.Examples
                 _statusText.text = string.Format("Location: {0}", currLoc.LatitudeLongitude);
             }
         }
-
         public double GetLocationLat()
         {
             return currLoc.LatitudeLongitude.x;
@@ -72,5 +70,8 @@ namespace Mapbox.Examples
         {
             return currLoc.LatitudeLongitude.y;
         }
+
     }
+
+
 }

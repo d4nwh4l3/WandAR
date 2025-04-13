@@ -1,28 +1,27 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class MenuUIManager : MonoBehaviour
 {
     [SerializeField] private GameObject eventPanelUserInRange;
     [SerializeField] private GameObject eventPanelUserNotInRange;
-    
-    private bool isUIPanelActive;
-    private int tempEvent; 
+    bool isUIPanelActive;
+    int tempEvent;
     [SerializeField] private EventManager eventManager;
-
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
+    // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void DisplayStartEventPanel(int eventID)
     {
-        if (!isUIPanelActive) // ✅ Simplified condition
+        if (isUIPanelActive == false)
         {
             tempEvent = eventID;
             eventPanelUserInRange.SetActive(true);
@@ -32,12 +31,17 @@ public class MenuUIManager : MonoBehaviour
 
     public void OnJoinButtonClick()
     {
-    eventManager.ActivateEvent(tempEvent);
+        eventManager.ActivateEvent(tempEvent);  
+    }
+
+    public void CloseAllEvents()
+    {
+        eventManager.CloseAllEvents();
     }
 
     public void DisplayUserNotInRangePanel()
     {
-        if (!isUIPanelActive)
+        if (isUIPanelActive == false)
         {
             eventPanelUserNotInRange.SetActive(true);
             isUIPanelActive = true;
