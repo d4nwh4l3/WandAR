@@ -45,6 +45,7 @@ public class EventPointer : MonoBehaviour
         var eventLocation = new GeoCoordinatePortable.GeoCoordinate(eventPose[0], eventPose[1]);
         var distance = currentPlayerLocation.GetDistanceTo(eventLocation);
 
+
         Debug.Log("Distance is " + distance);
         if (distance < eventManager.maxDistance)
         {

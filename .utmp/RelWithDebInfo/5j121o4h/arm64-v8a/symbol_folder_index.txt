@@ -1,0 +1,1 @@
+C:\Users\Daniel\Downloads\WandAR-71254bf75862edf2ddb3957108ee5fe4af0c742a\WandAR-71254bf75862edf2ddb3957108ee5fe4af0c742a\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\cxx\RelWithDebInfo\5j121o4h\obj\arm64-v8a

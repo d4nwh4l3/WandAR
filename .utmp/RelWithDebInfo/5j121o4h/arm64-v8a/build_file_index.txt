@@ -1,0 +1,3 @@
+C:\Users\Daniel\Downloads\WandAR-71254bf75862edf2ddb3957108ee5fe4af0c742a\WandAR-71254bf75862edf2ddb3957108ee5fe4af0c742a\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\CMakeLists.txt
+C:\Users\Daniel\Downloads\WandAR-71254bf75862edf2ddb3957108ee5fe4af0c742a\WandAR-71254bf75862edf2ddb3957108ee5fe4af0c742a\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\FramePacing\CMakeLists.txt
+C:\Users\Daniel\Downloads\WandAR-71254bf75862edf2ddb3957108ee5fe4af0c742a\WandAR-71254bf75862edf2ddb3957108ee5fe4af0c742a\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\CMakeLists.txt
